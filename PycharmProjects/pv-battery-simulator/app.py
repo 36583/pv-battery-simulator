@@ -24,12 +24,15 @@ if simulate_button:
 
     # --- Plot energy flow chart ---
     st.subheader("Energy Flow Chart")
-    st.pyplot(plot_energy_flow(result_df, weather, day_type))
+    fig1 = plot_energy_flow(result_df, weather, day_type)
+    st.pyplot(fig1)
 
     # --- Display summary metrics ---
     st.subheader("Summary Metrics")
     summary_df = pd.DataFrame.from_dict(summaries, orient='index')
     st.dataframe(summary_df)
+    fig2 = plot_summary_bar(summaries)
+    st.pyplot(fig2)
 
     # --- Export CSV download button ---
     csv = summary_df.to_csv().encode("utf-8-sig")
