@@ -1,0 +1,11 @@
+# Ignore virtual environments and Python cache
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore output and temporary files
+simulation_summary.csv
+.DS_Store
+.env
